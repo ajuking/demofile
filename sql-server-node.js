@@ -65,6 +65,21 @@ con.query(sql3,(err,data)=>
 })
 })
 
+app.post('/tabledel/:Email',(req,res)=>
+{
+    const id=req.params.EMAIL;
+    console.log(id);
+    const sql1="delete from signin where Email='"+id+"'";
+    console.log(sql1)
+
+    con.query(sql1,(err,data)=>
+{  
+    if(err) return res.json(err);
+    return res.json(data);
+})
+}
+
+)
 
 app.put('/update',(req1,res)=>{
    
